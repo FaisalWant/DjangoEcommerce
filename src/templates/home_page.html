@@ -1,4 +1,32 @@
+{% extends "base.html" %}
 {% load static %}
+
+<title> Home Template </title>
+
+{% block content %}
+<div class='text-center'>
+    <h1>{{ title }} </h1>
+    <h1>Hello, world! we are working :)</h1>
+    </div>
+    <div class= 'row'>
+       <div class ='col'>
+       <img src="{% static 'img/beach.jpeg' %}" class ='img-fluid'/>
+       <p>{{ content }}</p>
+       </div>
+       </div>
+{% if premium_content %}      
+<div class='row'>
+<div class='col'>
+<h2> Premium Content</h2>
+{{ premium_content }}
+</div>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
+
 
 
 <!doctype html>
@@ -14,26 +42,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class='text-center'>
-    <h1>{{ title }} </h1>
-    <h1>Hello, world! we are working :)</h1>
-    </div>
-    <div class = 'container'>
-    <div class= 'row'>
-       <div class ='col'>
-       <img src="{% static 'img/beach.jpeg' %}" class ='img-fluid'/>
-       <p>{{ content }}</p>
-       </div>
-       </div>
-{% if premium_content %}      
-<div class='row'>
-<div class='col'>
-<h2> Premium Content</h2>
-{{ premium_content }}
-</div>
-</div>
-</div>
-{% endif %}
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -3,48 +3,54 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm, LoginForm, RegisterForm
 from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.models import User
-def login_page(request):
-	form=LoginForm(request.POST or None)
-	
-	context= {
-		"form": form
-	 }
-	print("user logged in ")
-	if form.is_valid():
-		print(form.cleaned_data)
-		username=form.cleaned_data.get("username")
-		password=form.cleaned_data.get("password")
-		user = authenticate( username= username, password= password)    # different for various versions of django
-		print(user)
-		# print(request.user.is_authenticated())
+from django.http import HttpResponse, JsonResponse
 
-		if user is not None:
-			print(request.user.is_authenticated())
-			
-			login(request, user)
-			# context['form']= LoginForm()
-			return redirect("/login")
-		else :
-			print("error")
-	return render(request, "auth/login.html",context)
-user= get_user_model()
-def register_page(request):
-	form=RegisterForm(request.POST or None)
-	context= {
-		"form": form
-	 }
-	if form.is_valid():
-		print(form.cleaned_data)
-		username=form.cleaned_data.get("username")
-		password=form.cleaned_data.get("password")
-		email=form.cleaned_data.get("email")
+
+# def login_page(request):
+# 	form=LoginForm(request.POST or None)
 	
-		new_User=user.objects.create_user(username,email, password)
-		print(new_User)
-	return render(request, "auth/register.html",context)
+# 	context= {
+# 		"form": form
+# 	 }
+# 	print("user logged in ")
+# 	if form.is_valid():
+# 		print(form.cleaned_data)
+# 		username=form.cleaned_data.get("username")
+# 		password=form.cleaned_data.get("password")
+# 		user = authenticate( username= username, password= password)    # different for various versions of django
+# 		print(user)
+# 		# print(request.user.is_authenticated())
+
+# 		if user is not None:
+# 			print(request.user.is_authenticated())
+			
+# 			login(request, user)
+# 			# context['form']= LoginForm()
+# 			return redirect("/login")
+# 		else :
+# 			print("error")
+# 	return render(request, "auth/login.html",context)
+# user= get_user_model()
+
+
+# def register_page(request):
+# 	form=RegisterForm(request.POST or None)
+# 	context= {
+# 		"form": form
+# 	 }
+# 	if form.is_valid():
+# 		print(form.cleaned_data)
+# 		username=form.cleaned_data.get("username")
+# 		password=form.cleaned_data.get("password")
+# 		email=form.cleaned_data.get("email")
+	
+# 		new_User=user.objects.create_user(username,email, password)
+# 		print(new_User)
+# 	return render(request, "auth/register.html",context)
 
 
 def home_page(request):
+	# print(request.session.get('first_name','Unknown'))    # getter 
 	context={
 		"title":"hello World",
 		 "content": "welcome to the home  page",
@@ -66,12 +72,24 @@ def contact_page(request):
 	contact_form= ContactForm(request.POST or None)
 
 	context={
-	"title": "contact_page",
+	"title": "Contact",
 	"content": "welcome to the contact Page",
-	"form": contact_form
+	"form": contact_form,
+	"brand": "new Brand Name"
 	}
 	if contact_form.is_valid():
 		print(contact_form.cleaned_data)
+		if request.is_ajax():
+			return JsonResponse({"message": "ThankYou for ur submission :)"})
+
+
+	if contact_form.errors:
+		errors = contact_form.errors.as_json()
+		if request.is_ajax():
+			return HttpResponse(errors, status=400, content_type="application/json")		
+
+ 
+
 	# if request.method=='POST':
 	# 	print(request.POST)
 	# 	print (request.POST.get('fullname'))

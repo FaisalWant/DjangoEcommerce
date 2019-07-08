@@ -1,0 +1,132 @@
+[
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "title": "chocolate",
+        "slug": "choc",
+        "description": "The best damn chocoloate",
+        "price": "39.90",
+        "image": "products/337855_HJPL37C.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "title": "Hats",
+        "slug": "roun",
+        "description": "hats of european style",
+        "price": "100.00",
+        "image": "products/368899_hG2Lp1o.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "title": "pickles",
+        "slug": "pick",
+        "description": "awesome variety of pickles",
+        "price": "200.00",
+        "image": "products/463420_cmRxG8R.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "title": "speakers",
+        "slug": "speak",
+        "description": "best quality of speakers",
+        "price": "300.00",
+        "image": "products/464399_iDHGXh4.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "title": "Monitors",
+        "slug": "Mon",
+        "description": "Monitors for visual display",
+        "price": "1000.00",
+        "image": "products/528054.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "title": "jeans",
+        "slug": "jean",
+        "description": "he classic blue denim jeans offer choices in fits, cuts giving you the option to choose one that fits you just right. A regular fit jean is great for physical work as it offers a little legroom. A narrow-fit jean is a mix of regular and slim fit denims and is perfect for semi-formal occasions. For those who always like to stay on top of trends, skinny fit jeans help up your style quotient. With a fit that hugs your body, these skinny fit denims are the ultimate style statements.",
+        "price": "900.00",
+        "image": "products/540992_Gikuxmh.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "title": "Shirts",
+        "slug": "shirt",
+        "description": "Peter England also recently launched the sub brand Peter England Party, which offers trendy club wear that is easy on the pocket yet high on style. Peter England Elite- Premium Formal Wear Perfect for young managers who are making their mark, sub brand Peter England Elite comes with a complete array of dapper formal shirts and trousers, sharp suits and blazers, and accessories.",
+        "price": "1500.00",
+        "image": "products/830799.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "title": "phones",
+        "slug": "phon",
+        "description": "A mobile phone, known as a cell phone in North America, is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area. The radio frequency link establishes a connection to the switching systems of a mobile phone operator, which provides access to the public switched telephone network.Wikipedia",
+        "price": "2000.00",
+        "image": "products/4517889-black-wolf-wallpapers_YODNg84.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+        "title": "tables",
+        "slug": "tab",
+        "description": "ou're looking for a dining table set that can easily accommodate your family, then a 6-seater dinning table set is your go-to option. Checkout the 6-seater dining table sets from Woodness. Made from eco-friendly Malaysian Rubberwood, this dining table set boasts a clean and contemporary look with well-balanced proportions. A strain-resistant lacquer shields its distinctive grain pattern and adds to the durability of the product. The straight and sturdy legs that support the table top ...",
+        "price": "4000.00",
+        "image": "products/31351409_1696077630475398_55265745084350464_n.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+        "title": "jetplane",
+        "slug": "jet",
+        "description": "A jet aircraft (or simply jet) is an aircraft (nearly always a fixed-wing aircraft) propelled by jet engines. Whereas the engines in propeller-powered aircraft generally achieve their maximum efficiency at much lower speeds and altitudes, jet engines and ...",
+        "price": "10000.00",
+        "image": "products/68830495-wolf-wallpapers.jpg",
+        "featured": false,
+        "active": true
+    }
+}
+]

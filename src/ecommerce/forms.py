@@ -1,10 +1,27 @@
 from django import forms
 from django.contrib.auth import get_user_model
 User=get_user_model()
+
 class ContactForm(forms.Form):
-	fullname=forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control','placeholder':'Your_full_name', 'id':'form_full_name'}))
-	email= forms.EmailField(widget=forms.EmailInput({'class':'form-control','placeholder': 'Type in ur email'}))
-	content=forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'Type in ur text',}))
+	fullname=forms.CharField(
+		widget=forms.TextInput(
+			attrs={
+			'class': 'form-control',
+			'placeholder':'Your_full_name', 
+			'id':'form_full_name'}))
+	email= forms.EmailField(
+		widget=forms.EmailInput(
+		 attrs={
+		 'class':'form-control',
+		 'placeholder': 'Type in ur email'
+		 }))
+
+	content=forms.CharField(
+		widget=forms.Textarea(
+			attrs={
+			'class':'form-control',
+			 'placeholder':'Type in ur text',
+			 }))
 
 
 	def clean_email(self):
@@ -13,6 +30,10 @@ class ContactForm(forms.Form):
 			raise forms.ValidationError("email has to be  gmail.com")
 			return email
 
+	# def clean_content(self):
+	# 	raise forms.ValidationError("Content is Wrong")		
+
+	
 class LoginForm(forms.Form):
 	username=forms.CharField()
 	password=forms.CharField(widget=forms.PasswordInput)
@@ -51,3 +72,4 @@ class RegisterForm(forms.Form):
 			raise forms.ValidationError("password must match")
 		else:
 		 return data
+

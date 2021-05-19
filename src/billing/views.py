@@ -4,9 +4,9 @@ from django.utils.http import is_safe_url
 # Create your views here.
 import stripe 
 
-stripe.api_key= "sk_test_V71rYXMxaIj2PzbbrcXERB2L00jlR3Sodn"
+stripe.api_key= "---"
 
-STRIPE_PUB_KEY= "pk_test_kBxDy3i9kU4ir6LiN6Ajtna900zDrbQNwE"
+STRIPE_PUB_KEY= "---"
 def payment_method_view(request):
 	next_url=None
 	next_= request.GET.get('next')
